@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comic;
 use App\Http\Requests\StoreComicRequest;
 use App\Http\Requests\UpdateComicRequest;
+use App\Http\Controllers\Controller;
 
 class ComicController extends Controller
 {
@@ -15,7 +16,8 @@ class ComicController extends Controller
      */
     public function index()
     {
-        //
+        $comics = Comic::orderbydesc('id')->get();
+        return view('guests.comics.index', compact('comics'));
     }
 
     /**
@@ -47,7 +49,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        //
+        return view('guests.comics.show', compact('comic'));
     }
 
     /**
