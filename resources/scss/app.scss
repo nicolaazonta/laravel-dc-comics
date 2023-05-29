@@ -1,1 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
+
+header, footer{
+    background-image: url(/resources/img/footer-bg.jpg)!important;
+}
+main{
+    background-color: lightblue;
+}
