@@ -3,13 +3,14 @@
 @section('content')
 
 <div class="container py-5 text-center" >
-    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-2">
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
 
         @forelse ($comics as $comic)
             
         <div class="col">
-            <div class="card shadow">
-                <h1>{{ $comic->title }}</h1>
+            <div class="card shadow h-100">
+                <img class="card-img-top figure-img" src="{{ $comic->thumb }}" alt="">
+                <h6>{{ $comic->title }}</h6>
             </div>
         </div>
 
