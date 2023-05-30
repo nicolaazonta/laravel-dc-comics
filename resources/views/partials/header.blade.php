@@ -17,9 +17,9 @@
     <nav class="container d-flex justify-content-center align-items-center py-5">
         <img src="{{ Vite::asset('resources/img/dc-logo.png') }}" alt="">
         <div class="d-flex">
-            <a class="mx-4 nav-item nav-link badge text-bg-secondary {{ Route::currentRouteName() === 'home' ? 'bg-info text-dark' : '' }}" href="{{ route('home') }}" aria-current="page"><h5>Home</h5></a>
-            <a class="mx-4 nav-item nav-link badge text-bg-secondary {{ Route::currentRouteName() === 'comics' ? 'bg-info text-dark' : '' }}" href="{{ route('comics') }}" aria-current="page"><h5>comics</h5></a>
-                
+            <a class=" btn btn-primary mx-2 p-1 {{ Route::currentRouteName() === 'home' ? 'bg-info text-dark' : '' }}" href="{{ route('home') }}" aria-current="page"><h6>Home</h6></a>
+            <a class=" btn btn-primary mx-2 p-1 {{ Route::currentRouteName() === 'comics' ? 'bg-info text-dark' : '' }}" href="{{ route('comics') }}" aria-current="page"><h6>comics</h6></a>
+            <a href="{{route('comics.create')}}" class=" btn btn-secondary mx-2 p-1"><h6>add</h6></a>    
             
         </div>
     </nav>

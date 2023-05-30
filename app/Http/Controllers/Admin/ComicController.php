@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Guests;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Comic;
 use App\Http\Requests\StoreComicRequest;
@@ -17,7 +17,7 @@ class ComicController extends Controller
     public function index()
     {
         $comics = Comic::orderbydesc('id')->get();
-        return view('guests.comics.index', compact('comics'));
+        return view('admin.comics.index', compact('comics'));
     }
 
     /**
@@ -27,7 +27,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.comics.create');
     }
 
     /**
@@ -38,7 +38,20 @@ class ComicController extends Controller
      */
     public function store(StoreComicRequest $request)
     {
-        //
+        $comic = new Comic();
+        // save the fileds
+        $comic->title = $request->title;
+        $comic->description = $request->description;
+        $comic->thumb = $request->thumb;
+        $comic->price = $request->price;
+        $comic->series = $request->series;
+        $comic->sale_date = $request->sale_date;
+        $comic->type = $request->type;       
+        $comic->save();
+
+
+        // return to a get route POST/REDIRECT/GET
+        return to_route('comics.index');
     }
 
     /**
@@ -49,7 +62,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        return view('guests.comics.show', compact('comic'));
+        return view('admin.comics.show', compact('comic'));
     }
 
     /**
