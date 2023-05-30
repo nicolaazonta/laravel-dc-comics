@@ -8,10 +8,10 @@
             @csrf
 
             <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" name="name" id="name" class="form-control" placeholder="comic name here"
-                    aria-describedby="nameHelper" required>
-                <small id="nameHelper" class="text-muted">type the name of the comic</small>
+                <label for="title" class="form-label">title</label>
+                <input type="text" name="title" id="title" class="form-control" placeholder="comic title here"
+                    aria-describedby="titleHelper" required>
+                <small id="titleHelper" class="text-muted">type the title of the comic</small>
             </div>
 
             <div class="mb-3">

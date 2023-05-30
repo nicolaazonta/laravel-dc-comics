@@ -51,7 +51,7 @@ class ComicController extends Controller
 
 
         // return to a get route POST/REDIRECT/GET
-        return to_route('comics.index');
+        return to_route('comics.index')->with('message', 'comic added successfully');
     }
 
     /**
