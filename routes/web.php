@@ -2,7 +2,7 @@
 
 
 use App\Http\Controllers\Admin\ComicController;
-use App\Http\Controllers\Guests\PageController;
+use App\Http\Controllers\Guest\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +25,6 @@ Route::resource('/admin/comics', ComicController::class);
 
 Route::get('/', [PageController::class, 'index'])->name('welcome');
 
-Route::resource('admin/games', ComicController::class, ['as' => 'admin']);
+Route::resource('/admin/comics', ComicController::class, ['as' => 'admin']);
 
 
