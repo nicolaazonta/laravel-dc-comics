@@ -11,8 +11,9 @@
             <div class="card shadow h-100">
                 <img class="card-img-top figure-img" src="{{ $comic->thumb }}" alt="">
                 <h6>{{ $comic->title }}</h6>
-                <a class="btn btn-info m-1" href="{{route('comics.show', $comic->id)}}" title="View">view more</a>
-                <a class="btn btn-danger m-1" href="{{route('comics.show', $comic->id)}}" title="View">delete</a>
+                <a class="btn btn-info m-1" href="{{route('admin.comics.show', $comic->id)}}" title="View">view more</a>
+                <a class="btn btn-success m-1" href="{{route('admin.comics.edit', $comic->id)}}" title="Edit">edit</a>
+                <a class="btn btn-danger m-1" href="{{route('admin.comics.show', $comic->id)}}" title="Delete">delete</a>
 
             </div>
         </div>

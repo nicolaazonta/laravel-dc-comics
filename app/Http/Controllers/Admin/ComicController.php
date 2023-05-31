@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Comic;
 use App\Http\Requests\StoreComicRequest;
 use App\Http\Requests\UpdateComicRequest;
+use App\Models\Comic;
 use App\Http\Controllers\Controller;
 
 class ComicController extends Controller
@@ -37,21 +37,20 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(StoreComicRequest $request)
-    {
-        $comic = new Comic();
-        // save the fileds
-        $comic->title = $request->title;
-        $comic->description = $request->description;
-        $comic->thumb = $request->thumb;
-        $comic->price = $request->price;
-        $comic->series = $request->series;
-        $comic->sale_date = $request->sale_date;
-        $comic->type = $request->type;       
-        $comic->save();
-
+    {        
+        $data = [
+            'title' => $request->title,
+            'description' => $request->description,
+            'thumb' => $request->thumb,
+            'price' => $request->price,
+            'series' => $request->series,
+            'sale_date' => $request->sale_date,
+            'type' => $request->type
+        ];
+        Comic::create($data);
 
         // return to a get route POST/REDIRECT/GET
-        return to_route('comics.index')->with('message', 'comic added successfully');
+        return to_route('admin.comics.index')->with('message', 'comic added successfully');
     }
 
     /**
@@ -73,7 +72,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('admin.comics.edit', compact('comic'));
     }
 
     /**
@@ -85,7 +84,18 @@ class ComicController extends Controller
      */
     public function update(UpdateComicRequest $request, Comic $comic)
     {
-        //
+        $data = [
+            'title' => $request->title,
+            'description' => $request->description,
+            'thumb' => $request->thumb,
+            'price' => $request->price,
+            'series' => $request->series,
+            'sale_date' => $request->sale_date,
+            'type' => $request->type
+        ];
+        $comic->update($data);
+
+        return to_route('admin.comics.index')->with('message', 'comic updated');
     }
 
     /**
