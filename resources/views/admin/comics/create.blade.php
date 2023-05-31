@@ -4,7 +4,7 @@
     <div class="container w-50 py-5">
 
 
-        <form action="{{ route('comics.store') }}" method="post">
+        <form action="{{ route('admin.comics.store') }}" method="post">
             @csrf
 
             <div class="mb-3">

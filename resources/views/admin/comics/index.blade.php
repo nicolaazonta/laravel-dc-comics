@@ -1,8 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container py-5 text-center">
-        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+
+
+
+
+<div class="container py-5 text-center">
+    @if (session('message'))
+        
+    <div class="alert alert-primary" role="alert">
+        <strong>{{session('message')}}</strong>
+    </div>
+    @endif
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
 
             @forelse ($comics as $comic)
                 <div class="col">
