@@ -24,7 +24,7 @@ class StoreComicRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|min:5|max:10'
         ];
     }
 }

@@ -10,10 +10,17 @@
 
             <div class="mb-3">
                 <label for="title" class="form-label">title</label>
-                <input type="text" name="title" id="title" class="form-control" placeholder="comic title here"
-                    aria-describedby="titleHelper" required value="{{$comic->title}}">
+                <input type="text" name="title" id="title" class="form-control
+                @error('title') is-invalid                  
+                @enderror" placeholder="comic title here"
+                    aria-describedby="titleHelper" required value="{{old('title', $comic->title)}}">
                 <small id="titleHelper" class="text-muted">type the title of the comic</small>
             </div>
+            @error('title')
+                <div class="alert alert-primary" role="alert">
+                    <strong>Title, error</strong>{{ $message }}
+                </div>
+            @enderror
 
             <div class="mb-3">
                 <label for="description" class="form-label">description</label>
