@@ -1,9 +1,16 @@
 @import '~bootstrap/scss/bootstrap';
 
-header, footer{
+footer{
     background-image: url(/resources/img/footer-bg.jpg)!important;
 }
 main{
     background-color: lightblue;
     
 }
+.color_blue{
+    color: blue!important;
+}
+.text_bolder{
+    font-weight: 600!important;
+}
+
