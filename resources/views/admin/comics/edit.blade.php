@@ -50,7 +50,7 @@
             <div class="mb-3">{{-- price section --}}
                 <label for="price" class="form-label">price</label>
                 <input type="int" name="price" id="price" class="form-control @error('price') is-invalid @enderror" placeholder="comic price here"
-                    aria-describedby="priceHelper" value="{{ $comic->price }}">
+                    aria-describedby="priceHelper" value="{{ old('price', $comic->price) }}">
                 <small id="priceHelper" class="text-muted">type the price of the comic</small>
                 @error('price')
                     <div class="alert alert-primary" role="alert">
@@ -61,7 +61,7 @@
             <div class="mb-3">{{-- series section --}}
                 <label for="series" class="form-label">series</label>
                 <input type="int" name="series" id="series" class="form-control @error('series') is-invalid @enderror" placeholder="comic series here"
-                    aria-describedby="seriesHelper" value="{{ $comic->series }}">
+                    aria-describedby="seriesHelper" value="{{ old('series', $comic->series) }}">
                 <small id="seriesHelper" class="text-muted">type the series of the comic</small>
                 @error('series')
                     <div class="alert alert-primary" role="alert">
@@ -73,7 +73,7 @@
                 <label for="sale_date" class="form-label">sale_date</label>
                 <input type="int" name="sale_date" id="sale_date" class="form-control @error('sale_date') is-invalid @enderror"
                     placeholder="comic sale_date here" aria-describedby="sale_dateHelper"
-                    value="{{ $comic->sale_date }}">
+                    value="{{ old('sale_date', $comic->sale_date) }}">
                 <small id="sale_dateHelper" class="text-muted">type the sale_date of the comic</small>
                 @error('sale_date')
                     <div class="alert alert-primary" role="alert">
@@ -84,7 +84,7 @@
             <div class="mb-3">{{-- type section --}}
                 <label for="type" class="form-label">type</label>
                 <input type="int" name="type" id="type" class="form-control @error('type') is-invalid @enderror" placeholder="comic type here"
-                    aria-describedby="typeHelper" value="{{ $comic->type }}">
+                    aria-describedby="typeHelper" value="{{ old('type', $comic->type) }}">
                 <small id="typeHelper" class="text-muted">type the type of the comic</small>
                 @error('type')
                     <div class="alert alert-primary" role="alert">
